@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#4b1725">
+<meta name="description" content="Izzy Bites — delicious Nigerian food and catering in Northampton. Delivery Friday to Sunday.">
+<title>Izzy Bites | Nigerian Food in Northampton</title>
+<style>
+:root{--wine:#4b1725;--gold:#e8b86c;--cream:#fff8ee;--ink:#251b1d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--cream)}
+header{background:var(--wine);color:white;position:sticky;top:0;z-index:2}nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;gap:15px;flex-wrap:wrap}
+.logo{font-size:1.5rem;font-weight:900;color:var(--gold);text-decoration:none}nav .links{display:flex;gap:18px;flex-wrap:wrap}nav .links a{color:white;text-decoration:none;font-weight:600}
+.hero{background:linear-gradient(125deg,#4b1725,#8b3e37);color:white;padding:85px 22px;text-align:center}.hero h1{font-size:clamp(2.6rem,7vw,5rem);line-height:1.1;margin:0}.hero p{font-size:1.2rem;max-width:650px;margin:20px auto}
+.btn{display:inline-block;background:var(--gold);color:#321622;border:0;border-radius:30px;padding:12px 23px;font-weight:800;text-decoration:none;cursor:pointer}.btn.secondary{background:white}
+section{max-width:1100px;margin:auto;padding:56px 22px}h2{font-size:2rem;color:var(--wine);margin:0 0 12px}.intro{max-width:730px;color:#594b4b}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:18px;margin-top:28px}
+.card{background:white;border:1px solid #eaded7;border-radius:18px;padding:24px;box-shadow:0 5px 20px #3216220b}
+.card h3{color:var(--wine);margin:0 0 8px}.price{font-size:1.2rem;font-weight:800;color:#753b27}.muted{color:#6d6262;font-size:.92rem}
+.card button{margin-top:12px}.strip{background:#f4e6d5}.notice{background:#fff3dc;border-left:5px solid #d49a42;padding:17px;border-radius:8px}
+footer{background:var(--wine);color:white;text-align:center;padding:28px 18px}footer a{color:var(--gold)}
+.cartbar{position:fixed;bottom:16px;right:16px;z-index:5;box-shadow:0 6px 30px #0004}.cart{position:fixed;inset:0;background:#0008;z-index:10;display:none;align-items:flex-end;justify-content:center}.cart.open{display:flex}.panel{background:white;width:min(100%,600px);max-height:88vh;overflow:auto;border-radius:22px 22px 0 0;padding:24px}.panelhead{display:flex;justify-content:space-between;align-items:center}.plain{border:0;background:transparent;font-size:1.6rem;cursor:pointer}.line{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #eee;padding:12px 0}.line button{border:1px solid #ddd;background:white;border-radius:8px;padding:3px 9px;cursor:pointer}input,textarea,select{display:block;width:100%;padding:12px;border:1px solid #bbb;border-radius:9px;font:inherit;margin:6px 0 15px}label{font-weight:700}.small{font-size:.88rem}.total{font-size:1.4rem;font-weight:900;text-align:right}button:focus-visible,a:focus-visible{outline:3px solid #e8b86c;outline-offset:3px}
+</style>
+</head>
+<body>
+<header><nav><a class="logo" href="#">✦ Izzy Bites</a><div class="links"><a href="#menu">Menu</a><a href="#how">How to order</a><a href="#contact">Contact</a></div></nav></header>
+<main>
+<div class="hero"><h1>Made with love.<br>Full of flavour.</h1><p>Authentic Nigerian favourites, prepared fresh for your table. Proudly serving Northampton with delivery Friday–Sunday.</p><a class="btn" href="#menu">Explore the menu</a></div>
+<section id="menu"><h2>Our menu</h2><p class="intro">Choose your favourites and build an enquiry order. All prices are in GBP. Delivery charges, availability and final totals are confirmed before payment.</p>
+<h3>🍚 Rice coolers</h3><div class="grid" id="rice"></div>
+<h3 style="margin-top:42px">🥣 Swallow</h3><div class="grid" id="swallow"></div>
+<div class="notice" style="margin-top:28px"><strong>Looking for more?</strong> We also take enquiries for Nigerian meals, snacks and event catering. Send us a WhatsApp message with what you need and your preferred date.</div>
+</section>
+<div class="strip"><section id="how"><h2>How to order</h2><div class="grid"><div class="card"><h3>1. Choose</h3><p>Browse the menu and add items to your order enquiry.</p></div><div class="card"><h3>2. Send</h3><p>Share your order details with us on WhatsApp.</p></div><div class="card"><h3>3. Confirm</h3><p>We confirm availability, delivery charges and payment arrangements.</p></div></div><p class="notice"><strong>Ordering information:</strong> Delivery only in Northampton, Friday to Sunday. Same-day orders should be sent before 12 noon and depend on availability. Please give at least 48 hours' notice for catering enquiries.</p></section></div>
+<section id="contact"><h2>Let's feed you!</h2><p>Have a question, a special request or a catering event? Message Izzy Bites directly.</p><a class="btn" href="https://wa.me/447465242761" target="_blank" rel="noopener">Chat on WhatsApp</a><p class="muted">Northampton, UK · Delivery only · Friday–Sunday</p></section>
+</main>
+<footer>© <span id="year"></span> Izzy Bites · Made with love in Northampton · <a href="https://wa.me/447465242761">WhatsApp us</a></footer>
+<button class="btn cartbar" onclick="openCart()">🛍 View order (<span id="count">0</span>)</button>
+<div class="cart" id="cart" role="dialog" aria-modal="true" aria-label="Your order"><div class="panel"><div class="panelhead"><h2>Your order enquiry</h2><button class="plain" onclick="closeCart()" aria-label="Close">×</button></div><div id="lines"></div><p class="total" id="total"></p>
+<label for="name">Your name</label><input id="name" autocomplete="name" placeholder="Your name">
+<label for="date">Preferred delivery date</label><input id="date" type="date">
+<label for="area">Delivery area / postcode</label><input id="area" placeholder="Northampton postcode">
+<label for="notes">Extra details</label><textarea id="notes" rows="2" placeholder="Any special requests?"></textarea>
+<p class="muted small">This sends an enquiry via WhatsApp. No card payment is collected on this website. Final price and delivery fee are confirmed by Izzy Bites.</p>
+<button class="btn" onclick="sendOrder()">Send order via WhatsApp</button></div></div>
+<script>
+const items=[
+{id:'j12',name:'Jollof rice — 12L cooler',price:80,group:'rice'},
+{id:'j24',name:'Jollof rice — 24L cooler',price:150,group:'rice'},
+{id:'f12',name:'Fried rice — 12L cooler',price:90,group:'rice'},
+{id:'f24',name:'Fried rice — 24L cooler',price:170,group:'rice'},
+{id:'w12',name:'White rice — 12L cooler',price:60,group:'rice'},
+{id:'w24',name:'White rice — 24L cooler',price:110,group:'rice'},
+{id:'pounded',name:'Pounded yam (per piece)',price:2,min:12,group:'swallow'},
+{id:'semo',name:'Semo (per piece)',price:1.5,min:12,group:'swallow'}];
+const basket={};const money=n=>'£'+n.toFixed(2).replace(/\.00$/,'');
+for(const x of items){const el=document.createElement('article');el.className='card';el.innerHTML=`<h3>${x.name}</h3><p class="price">${money(x.price)}${x.min?' each':''}</p><p class="muted">${x.min?'Minimum order: '+x.min+' pieces':'Freshly prepared for your occasion'}</p><button class="btn" type="button">Add to order</button>`;el.querySelector('button').onclick=()=>add(x.id);document.getElementById(x.group).appendChild(el)}
+function add(id){const x=items.find(v=>v.id===id);basket[id]=(basket[id]||0)+(basket[id]?1:(x.min||1));refresh()}
+function adjust(id,d){const x=items.find(v=>v.id===id);basket[id]=Math.max(0,(basket[id]||0)+d);if(basket[id]&&x.min&&basket[id]<x.min)basket[id]=d<0?0:x.min;refresh()}
+function refresh(){const list=document.getElementById('lines');list.replaceChildren();let total=0,count=0;for(const x of items){let q=basket[x.id]||0;if(!q)continue;count+=q;total+=q*x.price;const div=document.createElement('div');div.className='line';const label=document.createElement('span');label.textContent=x.name+' — '+money(q*x.price);const controls=document.createElement('span');for(const [symbol,delta] of [['−',-1],['+',1]]){const b=document.createElement('button');b.textContent=symbol;b.setAttribute('aria-label',symbol==='+'?'Increase quantity':'Decrease quantity');b.onclick=()=>adjust(x.id,delta);controls.append(b)}const quantity=document.createElement('strong');quantity.textContent=' '+q+' ';controls.insertBefore(quantity,controls.lastChild);div.append(label,controls);list.append(div)}if(!count)list.textContent='Your order is empty. Add something delicious from the menu!';document.getElementById('count').textContent=count;document.getElementById('total').textContent='Menu subtotal: '+money(total)}
+function openCart(){refresh();document.getElementById('cart').classList.add('open')}function closeCart(){document.getElementById('cart').classList.remove('open')}
+document.getElementById('cart').addEventListener('click',e=>{if(e.target.id==='cart')closeCart()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});
+function sendOrder(){const selected=items.filter(x=>basket[x.id]);if(!selected.length){alert('Please add an item first.');return}const name=document.getElementById('name').value.trim(),date=document.getElementById('date').value,area=document.getElementById('area').value.trim(),notes=document.getElementById('notes').value.trim();let total=selected.reduce((n,x)=>n+x.price*basket[x.id],0);const message=['Hello Izzy Bites! I would like to enquire about an order:','',...selected.map(x=>`${x.name} × ${basket[x.id]} = ${money(x.price*basket[x.id])}`),'','Menu subtotal: '+money(total),'Name: '+(name||'Not provided'),'Preferred date: '+(date||'To be confirmed'),'Delivery postcode: '+(area||'To be confirmed'),'Notes: '+(notes||'None'),'','Please confirm availability, delivery fee and payment details.'].join('\n');window.open('https://wa.me/447465242761?text='+encodeURIComponent(message),'_blank','noopener')}
+document.getElementById('year').textContent=new Date().getFullYear();refresh();
+</script></body></html>
